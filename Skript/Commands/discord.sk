@@ -1,0 +1,6 @@
+command /discord [<string>]:
+	trigger:
+		send "%{-server::color::discord}%&l|"
+		send "%{-server::color::discord}%&l| &fConnect with us via discord @ <tooltip:%{-server::color::discord}%Click here><link:https://%-server::name::discord}%>%{-server::color::discord}%%-server::name::discord}%&f!"
+		send "%{-server::color::discord}%&l|"
+		play sound "block.note_block.chime" to player
