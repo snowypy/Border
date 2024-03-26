@@ -1,0 +1,26 @@
+
+function randomAnnouncement(rigged: number = 6):
+    if {_rigged} = 6:
+        set {_message} to a random element out of {-server::broadcasts::*}
+        play sound "block.amethyst_block.step" at volume 3.5 with pitch 2.9 to all players
+        broadcast formatted {_message}
+    else:
+        set {_message} to a random element out of {-server::broadcasts::%{_rigged}%}
+        play sound "block.amethyst_block.step" at volume 3.5 with pitch 2.9 to all players
+        broadcast formatted {_message}
+        
+every 2.5 minutes:
+    if online player count is greater than 5:
+        randomAnnouncement()
+    else:
+        send "&7The broadcast was not sent because there were less than 5 players online!" to console
+    
+command /pikz_AnnounceRandom [<number>]:
+    permission: op
+    permission message: &cInsufficient permissions!
+    trigger:
+        if arg 1 is set:
+            randomAnnouncement(arg 1)
+            stop
+        else:
+            randomAnnouncement()
