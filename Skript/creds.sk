@@ -1,0 +1,17 @@
+commands /credits [<string>]:
+	trigger:
+		credits_p(player)
+
+function credits_p(p: player)
+	send "" to {_p}
+	send "&a&lPikz Resources" to {_p}
+	send "" to {_p}
+	send "&fThis resource was provided by &aPikz &f& &aSnowyJS" to {_p}
+	send "" to {_p}
+
+function credits_b()
+	broadcast ""
+	broadcast "&a&lPikz Resources"
+	broadcast ""
+	broadcast "&fThis resource was provided by &aPikz &f& &aSnowyJS"
+	broadcast ""
