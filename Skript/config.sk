@@ -34,6 +34,7 @@ on load:
 	
 	set {-server::color::store} to "<##FF51FC>"
 
+	delete {-server::broadcasts::*}  
 	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You are playing on %{-server::color::highlight}%%{-server::name::domain}% %{-server::color::main}%with %{-server::color::highlight}%<online-players> other players%nl%%{-server::color::highlight}%&l|" to {-server::broadcasts::*} 
 	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You can join our discord using %{-server::color::highlight}%/discord%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
 	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%Do you want to support us? Visit our Webstore @ %{-server::color::highlight}%/store%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
