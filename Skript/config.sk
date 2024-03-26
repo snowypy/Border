@@ -34,6 +34,12 @@ on load:
 	
 	set {-server::color::store} to "<##FF51FC>"
 
+	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You are playing on %{-server::color::highlight}%%{-server::name::domain}% %{-server::color::main}%with %{-server::color::highlight}%<online-players> other players%nl%%{-server::color::highlight}%&l|" to {-server::broadcasts::*} 
+	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You can join our discord using %{-server::color::highlight}%/discord%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
+	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%Do you want to support us? Visit our Webstore @ %{-server::color::highlight}%/store%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
+	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%Want some COOL items? Try out AFKing using%{-server::color::highlight}%/afk%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
+	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%This was developed by %{-server::color::highlight}%Pikz & SnowyJS %{-server::color::main}%Thanks for supporting us!%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} # THIS IS CREDITS! FEEL FREE TO REMOVE
+
 on join:
 	
 	if {-server::name::name} is "Example":
