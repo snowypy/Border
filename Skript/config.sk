@@ -1,0 +1,48 @@
+# Hello! Thank you for purchasing this setup.
+# To configure all of your server branding in one place,
+# you can use this configuration file.
+#
+# If you are found to have shared and of the data in this setup without permission,
+# You could have your license revoked from any Pikz Studio resources that you own.		
+#
+# Feel free to remove the hashed out messages once read however note that this does not invalidate the message.
+
+on load:
+	
+	set {-server::name::name} to "Example"
+	set {-server::name::domain} to "play.example.com"
+	set {-server::name::discord} to "discord.gg/example"
+	set {-server::name::store} to "store.example.com"
+	set {-server::name::forums} to "forums.example.com"	
+
+	set {-server::game::start::money} to 5000
+
+	set {-server::game::start::tpdelay} to 5 # Seconds
+	set {-server::game::start::tpmessage::type} to "action-bar" # action-bar, title or text 
+	set {-server::game::start::tpmessage::message} to "%{-server::color::main}%You are teleporting to %{-server::color::highlight}%<loc> &7(<time>s left)"  
+
+	set {-server::game::missions::reset} to 24 hours
+
+
+	set {-server::color::title} to "<##63FF51>"
+	set {-server::color::domain} to "<##9CFF91>"
+
+	set {-server::color::main} to "&7"
+	set {-server::color::highlight} to "<##6FFF22>"
+
+	set {-server::color::discord} to "<##518BFF>"
+	
+	set {-server::color::store} to "<##FF51FC>"
+
+on join:
+	
+	if {-server::name::name} is "Example":
+		wait 20 ticks
+		send ""
+		send "&fHey there! It looks like you have not configured your setup!"
+		send "&fCheck out &aSkript/Scripts/config.sk &fto configure your server!"
+		send "&fThis is a &aPikz Resource, Thanks for purchasing <##F642FF>❤"
+		send ""
+		send "&fThis resource was created by <tooltip:&a@_pikz &fon discord!>&aPikz &f& <tooltip:&a@snowyjs &fon discord!>&aSnowyJS"
+		send ""
+		play sound "block.note_block.chime" to player at volume 10
