@@ -1,6 +1,6 @@
 command /store [<string>]:
 	trigger:
-		send "%{-server::color::store}%&l|"
-		send "%{-server::color::store}%&l| &fWant to support us? Visit <tooltip:%{-server::color::store}%Click here><link:https://%-server::name::store}%>%{-server::color::store}%%-server::name::store}%&f!"
-		send "%{-server::color::store}%&l|"
+		send formatted "%{-server::color::store}%&l|"
+		send formatted "%{-server::color::store}%&l| &fWant to support us? Visit <tooltip:%{-server::color::store}%Click here><link:https://%{-server::name::store}%>%{-server::color::store}%%{-server::name::store}%&f!"
+		send formatted "%{-server::color::store}%&l|"
 		play sound "block.note_block.chime" to player
