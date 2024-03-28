@@ -9,41 +9,41 @@
 
 on load:
 	
-	set {-server::name::name} to "Example"
-	set {-server::name::domain} to "play.example.com"
-	set {-server::name::discord} to "discord.gg/example"
-	set {-server::name::store} to "store.example.com"
-	set {-server::name::forums} to "forums.example.com"	
+	set {server::name::name} to "Example"
+	set {server::name::domain} to "play.example.com"
+	set {server::name::discord} to "discord.gg/example"
+	set {server::name::store} to "store.example.com"
+	set {server::name::forums} to "forums.example.com"	
 
-	set {-server::game::start::money} to 5000
+	set {server::game::start::money} to 5000
 
-	set {-server::game::start::tpdelay} to 5 # Seconds
-	set {-server::game::start::tpmessage::type} to "action-bar" # action-bar, title or text 
-	set {-server::game::start::tpmessage::message} to "%{-server::color::main}%You are teleporting to %{-server::color::highlight}%<loc> &7(<time>s left)"  
+	set {server::game::start::tpdelay} to 5 # Seconds
+	set {server::game::start::tpmessage::type} to "action-bar" # action-bar, title or text 
+	set {server::game::start::tpmessage::message} to "%{server::color::main}%You are teleporting to %{server::color::highlight}%<loc> &7(<time>s left)"  
 
-	set {-server::game::missions::reset} to 24 hours
+	set {server::game::missions::reset} to 24 hours
 
 
-	set {-server::color::title} to "<##63FF51>"
-	set {-server::color::domain} to "<##9CFF91>"
+	set {server::color::title} to "<##63FF51>"
+	set {server::color::domain} to "<##9CFF91>"
 
-	set {-server::color::main} to "&7"
-	set {-server::color::highlight} to "<##6FFF22>"
+	set {server::color::main} to "&7"
+	set {server::color::highlight} to "<##6FFF22>"
 
-	set {-server::color::discord} to "<##518BFF>"
+	set {server::color::discord} to "<##518BFF>"
 	
-	set {-server::color::store} to "<##FF51FC>"
+	set {server::color::store} to "<##FF51FC>"
 
-	delete {-server::broadcasts::*}  
-	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You are playing on %{-server::color::highlight}%%{-server::name::domain}% %{-server::color::main}%with %{-server::color::highlight}%<online-players> other players%nl%%{-server::color::highlight}%&l|" to {-server::broadcasts::*} 
-	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%You can join our discord using %{-server::color::highlight}%/discord%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
-	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%Do you want to support us? Visit our Webstore @ %{-server::color::highlight}%/store%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
-	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%Want some COOL items? Try out AFKing using%{-server::color::highlight}%/afk%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} 
-	add "%{-server::color::highlight}%&l|%nl%%{-server::color::highlight}%&l| %{-server::color::title}%%{-server::name::name}% %{-server::color::main}%This was developed by %{-server::color::highlight}%Pikz & SnowyJS %{-server::color::main}%Thanks for supporting us!%nl%%{-server::color::highlight}%" to {-server::broadcasts::*} # THIS IS CREDITS! FEEL FREE TO REMOVE
+	delete {server::broadcasts::*}  
+	add "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%You are playing on %{server::color::highlight}%%{server::name::domain}% %{server::color::main}%with %{server::color::highlight}%<online-players> other players%nl%%{server::color::highlight}%&l|" to {server::broadcasts::*} 
+	add "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%You can join our discord using %{server::color::highlight}%/discord%nl%%{server::color::highlight}%" to {server::broadcasts::*} 
+	add "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%Do you want to support us? Visit our Webstore @ %{server::color::highlight}%/store%nl%%{server::color::highlight}%" to {server::broadcasts::*} 
+	add "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%Want some COOL items? Try out AFKing using%{server::color::highlight}%/afk%nl%%{server::color::highlight}%" to {server::broadcasts::*} 
+	add "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%This was developed by %{server::color::highlight}%Pikz & SnowyJS %{server::color::main}%Thanks for supporting us!%nl%%{server::color::highlight}%" to {server::broadcasts::*} # THIS IS CREDITS! FEEL FREE TO REMOVE
 
 on join:
 	
-	if {-server::name::name} is "Example":
+	if {server::name::name} is "Example":
 		wait 20 ticks
 		send ""
 		send "&fHey there! It looks like you have not configured your setup!"
@@ -52,4 +52,4 @@ on join:
 		send ""
 		send "&fThis resource was created by <tooltip:&a@_pikz &fon discord!>&aPikz &f& <tooltip:&a@snowyjs &fon discord!>&aSnowyJS"
 		send ""
-		play sound "block.note_block.chime" to player at volume 10
+		play sound "block.note_block.chime" to player
