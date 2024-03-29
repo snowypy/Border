@@ -1,7 +1,9 @@
 on load:
 	set {-local::permnode} to {-server::name::name} in lowercase
-	set {-local::servername} to {-server::name::name} in uppercase
-	send "%nl%%{-server::color::highlight}%%{-local::servername}%%nl%%nl%%{-server::color::main}%You have loaded with the storage:%nl% %{-server::color::highlight}%- %{-local::permnode}%%nl%%{-server::color::highlight}%- %{-local::servername}%%nl%" to console
+	set {-local::color} to {-server::color::highlight}
+	set {-local::base} to {-server::color::main}
+	set {-local::servername} to "%{-local::color}%&l%{-server::name::name}%" in uppercase
+	send formatted "%nl%%{-local::color}%%{-local::servername}%%nl%%nl%%{-local::base}%You have loaded the gamemode module with the storage:%nl% %{-local::color}%- %{-local::permnode}%%nl% %{-local::color}%- %{-local::servername}%%nl%" to console
 
 command /gm [<text>] [<player>]:
 	aliases: gamemode, g
@@ -12,68 +14,68 @@ command /gm [<text>] [<player>]:
 				stop
 			if arg-2 is not set:
 				gamemode(player, "creative")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set their gamemode to %{-server::color::highlight}%Creative" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set their gamemode to %{-local::color}%Creative" to all players where [input has permission "%{-local::permnode}%.staff"]
 			else:
 				gamemode(arg-2, "creative")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set %{-server::color::highlight}%%arg-2%'s %{-server::color::main}%gamemode to %{-server::color::highlight}%Creative" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set %{-local::color}%%arg-2%'s %{-local::base}%gamemode to %{-local::color}%Creative" to all players where [input has permission "%{-local::permnode}%.staff"]
 		if arg-1 is "survival" or "s":
 			if player does not have permission "%{-local::permnode}%.gamemode.s":
 				send action bar "&4You do not have permission to do this!" to player
 				stop
 			if arg-2 is not set:
 				gamemode(player, "survival")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set their gamemode to %{-server::color::highlight}%Survival" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set their gamemode to %{-local::color}%Survival" to all players where [input has permission "%{-local::permnode}%.staff"]
 			else:
 				gamemode(arg-2, "survival")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set %{-server::color::highlight}%%arg-2%'s %{-server::color::main}%gamemode to %{-server::color::highlight}%Survival" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set %{-local::color}%%arg-2%'s %{-local::base}%gamemode to %{-local::color}%Survival" to all players where [input has permission "%{-local::permnode}%.staff"]
 		if arg-1 is "adventure" or "a":
 			if player does not have permission "%{-local::permnode}%.gamemode.a":
 				send action bar "&4You do not have permission to do this!" to player
 				stop
 			if arg-2 is not set:
 				gamemode(player, "adventure")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set their gamemode to %{-server::color::highlight}%Adventure" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set their gamemode to %{-local::color}%Adventure" to all players where [input has permission "%{-local::permnode}%.staff"]
 			else:
 				gamemode(arg-2, "adventure")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set %{-server::color::highlight}%%arg-2%'s %{-server::color::main}%gamemode to %{-server::color::highlight}%Adventure" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set %{-local::color}%%arg-2%'s %{-local::base}%gamemode to %{-local::color}%Adventure" to all players where [input has permission "%{-local::permnode}%.staff"]
 		if arg-1 is "spectator" or "sp":
 			if player does not have permission "%{-local::permnode}%.gamemode.sp":
 				send action bar "&4You do not have permission to do this!" to player
 				stop
 			if arg-2 is not set:
 				gamemode(player, "spectator")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set their gamemode to %{-server::color::highlight}%Spectator" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set their gamemode to %{-local::color}%Spectator" to all players where [input has permission "%{-local::permnode}%.staff"]
 			else:
 				gamemode(arg-2, "spectator")
-				send "%{-server::color::highlight}%%{-local::servername}% %player% %{-server::color::main}%has set %{-server::color::highlight}%%arg-2%'s %{-server::color::main}%gamemode to %{-server::color::highlight}%Spectator" to all players where [input has permission "%{-local::permnode}%.staff"]
+				send formatted "%{-local::color}%%{-local::servername}% %{-local::color}%%player% %{-local::base}%has set %{-local::color}%%arg-2%'s %{-local::base}%gamemode to %{-local::color}%Spectator" to all players where [input has permission "%{-local::permnode}%.staff"]
 
 command /gmc:
 	trigger:
 		if player has permission "%{-local::permnode}%.gamemode.c":
 			make player execute command "gm c"
 		else:
-			send "&cYou do not have the required permission node to execute that command!"
+			send formatted "&cYou do not have the required permission node to execute that command!"
 
 command /gms:
 	trigger:
 		if player has permission "%{-local::permnode}%.gamemode.s":
 			make player execute command "gm s"
 		else:
-			send "&cYou do not have the required permission node to execute that command!"
+			send formatted "&cYou do not have the required permission node to execute that command!"
 
 command /gmsp:
 	trigger:
 		if player has permission "%{-local::permnode}%.gamemode.sp":
 			make player execute command "gm sp"
 		else:
-			send "&cYou do not have the required permission node to execute that command!"
+			send formatted "&cYou do not have the required permission node to execute that command!"
 
 command /gma:
 	trigger:
 		if player has permission "%{-local::permnode}%.gamemode.a":
 			make player execute command "gm a"
 		else:
-			send "&cYou do not have the required permission node to execute that command!"
+			send formatted "&cYou do not have the required permission node to execute that command!"
 
 
 
