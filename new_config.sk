@@ -1,0 +1,69 @@
+# Hello! Thank you for purchasing this setup.
+# To configure all of your server branding in one place,
+# you can use this configuration file.
+#
+# If you are found to have shared and of the data in this setup without permission,
+# You could have your license revoked from any Pikz Studio resources that you own.		
+#
+# Feel free to remove the hashed out messages once read however note that this does not invalidate the message.
+
+on load:
+	config_loadYAML()
+
+on unload:
+	config_unloadYAML()
+
+
+
+function config_loadYAML():
+	load yaml "plugins/Config/server.yml" as "config"
+
+	set {-server::name::name} to yaml value "server.name.name" from "config"
+	set {-server::name::domain} to yaml value "server.name.domain" from "config"
+	set {-server::name::discord} to yaml value "server.name.discord" from "config"
+	set {-server::name::store} to yaml value "server.name.store" from "config"
+	set {-server::name::forums} to yaml value "server.name.forums" from "config"
+
+	set {-server::game::start::money} to yaml value "server.game.start.money" from "config"
+
+	set {-server::game::start::tpdelay} to yaml value "server.game.start.tpdelay" from "config" # Seconds
+	set {-server::game::start::tpmessage::type} to yaml value "server.game.start.tpmessage_type" from "config" # action-bar, title or text 
+	set {-server::game::start::tpmessage::message} to yaml value "server.game.start.tpmessages_message" from "config"
+
+	set {-server::color::title} to yaml value "server.color.title" from "config"
+	set {-server::color::domain} to yaml value "server.color.domain" from "config"
+
+	set {-server::color::main} to yaml value "server.color.main" from "config"
+	set {-server::color::highlight} to yaml value "server.color.highlight" from "config"
+
+	set {-server::color::discord} to yaml value "server.color.discord" from "config"
+	
+	set {-server::color::store} to yaml value "server.color.store" from "config"
+
+	send formatted "" to console
+	send formatted "%{-server::name::name}%" to console
+	send formatted "&7[You are loading the config from Config/server.yml&7]" to console
+	send formatted "" to console
+	send formatted " &7Server Name: %{-server::name::name}%" to console
+	send formatted " &7Server Domain: %{-server::name::domain}%" to console
+	send formatted " &7Server Discord: %{-server::name::discord}%" to console
+	send formatted " &7Server Store: %{-server::name::store}%" to console
+	send formatted " &7Server Forums: %{-server::name::forums}%" to console
+	send formatted "" to console
+	send formatted " &7Starting Money: %{-server::game::start::money}%" to console
+	send formatted " &7Teleport Delay: %{-server::game::start::tpdelay}%" to console
+	send formatted " &7Teleport Message Type: %{-server::game::start::tpmessage::type}%" to console
+	send formatted "" to console
+	send formatted " &7Title Color: %{-server::color::title}%&l⬛" to console
+	send formatted " &7Domain Color: %{-server::color::domain}%&l⬛" to console
+	send formatted " &7Main Color: %{-server::color::main}%&l⬛" to console
+	send formatted " &7Highlight Color: %{-server::color::highlight}%&l⬛" to console
+	send formatted " &7Discord Color: %{-server::color::discord}%&l⬛" to console
+	send formatted " &7Store Color: %{-server::color::store}%&l⬛" to console
+	send formatted "" to console
+	send formatted "&a[You have loaded the config from yaml.]" to console
+	send formatted "" to console
+
+function config_unloadYAML():
+	send "&4[Severe] &7You are unloading the configuration yaml! This will &4&lBREAK &7your server." to console
+	send "&4[Severe] you have unloaded the configuration yaml!" to console
