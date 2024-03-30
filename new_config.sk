@@ -18,6 +18,7 @@ command /reloadconfig [<string>]:
 		if player has permission "%{-server::name::name}%.*":
 			send "&4[Server] %player% &7is fetching from YAML. Some features may not be available." to all players where [input has permission "%{-server::name::name}%.admin"]
 			config_loadYAML()
+			wait 20 ticks
 			gm_loadYAML()
 			send "&4[Server] %player% &7has fetched from YAML. Ask them to revert any changes if you notice any bugs." to all players where [input has permission "%{-server::name::name}%.admin"]
 
