@@ -1,6 +1,6 @@
 # Hello! Thank you for purchasing this setup.
 # To configure all of your server branding in one place,
-# you can use this configuration file.
+# you can use the configuration file.
 #
 # If you are found to have shared and of the data in this setup without permission,
 # You could have your license revoked from any Pikz Studio resources that you own.		
@@ -12,6 +12,12 @@ on load:
 
 on unload:
 	config_unloadYAML()
+
+command /reloadconfig [<string>]:
+	trigger:
+		if player has permission "%{-server::name::name}%.*":
+			config_loadYAML()
+			gm_loadYAML()
 
 
 
