@@ -16,9 +16,10 @@ on unload:
 command /reloadconfig [<string>]:
 	trigger:
 		if player has permission "%{-server::name::name}%.*":
+			send "&4[Server] &7%player% is fetching from YAML. Some features may not be available." to all players where [input has permission "%{-server::name::name}%.admin"]
 			config_loadYAML()
 			gm_loadYAML()
-
+			send "&4[Server] &7%player% has fetched from YAML. Ask them to revert any changes if you notice any bugs." to all players where [input has permission "%{-server::name::name}%.admin"]
 
 
 function config_loadYAML():
