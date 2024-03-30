@@ -67,3 +67,16 @@ function config_loadYAML():
 function config_unloadYAML():
 	send "&4[Severe] &7You are unloading the configuration yaml! This will &4&lBREAK &7your server." to console
 	send "&4[Severe] you have unloaded the configuration yaml!" to console
+
+	on join:
+	
+		if {-server::name::name} is "Example":
+			wait 20 ticks
+			send ""
+			send "&fHey there! It looks like you have not configured your setup!"
+			send "&fCheck out &aConfig/server.yml &fto configure your server!"
+			send "&fThis is a &aPikz Resource, Thanks for purchasing <##F642FF>❤"
+			send ""
+			send "&fThis resource was created by <tooltip:&a@_pikz &fon discord!>&aPikz &f& <tooltip:&a@snowyjs &fon discord!>&aSnowyJS"
+			send ""
+			play sound "block.note_block.chime" to player
