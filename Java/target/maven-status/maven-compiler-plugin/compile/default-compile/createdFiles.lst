@@ -1,0 +1,9 @@
+com\border\License.class
+com\border\MissionCore\MissionsData$MissionData.class
+com\border\MissionCore\MissionsData.class
+com\border\MissionCore\MissionListener.class
+com\border\MissionCore\MissionsCommand.class
+com\border\Border.class
+com\border\Utils\Trash.class
+com\border\Utils\SessionListener.class
+com\border\License$LicenseData.class
