@@ -24,10 +24,17 @@ public class Border extends JavaPlugin {
           Chat Filter
           Database Support
           Config ymls [To be loaded into the Config/* directory]
+
+            Config/Branding/brand.yml -> Sk
+            Config/World/config.yml -> Java
+            Config/Missions/config.yml -> Java
+            Config/Basic/config.yml -> Java
+
           World Manage [Manage Visting rights, Manage Visiting location, TP On join, Border Color]
           World Creation
           World Visting
-         */
+
+
          */
 
         plugin = this;
