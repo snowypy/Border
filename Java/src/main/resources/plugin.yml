@@ -1,9 +1,12 @@
 name: Border
-version: '${project.version}'
-main: com.border.mc.Missions
+version: '1.2'
+main: xyz.pikzstudio.Border
 api-version: '1.20'
-prefix: Border
+prefix: ServerCore
 authors: [SnowyJS]
+depend:
+  - LuckPerms
+
 description: A Pikz Resource
 website: https://mlg.lol/snowyjs
 
@@ -11,3 +14,7 @@ commands:
   missions:
     description: Start a random mission, display active missions, or open mission GUI
     usage: /<command> [start | gui]
+  world:
+    description: Manage your world
+  trash:
+    description: Open the trash GUI
