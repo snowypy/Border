@@ -31,7 +31,7 @@ public class Worlds implements CommandExecutor {
         World smallWorld = Bukkit.createWorld(worldCreator);
 
          double borderSize = 15;
-         Bukkit.World.getWorldBorder().setSize(borderSize);
+         smallWorld.getWorldBorder().setSize(borderSize);
 
         ChatColor gray = ChatColor.DARK_GRAY;
         ChatColor green = ChatColor.GREEN;
@@ -46,10 +46,7 @@ public class Worlds implements CommandExecutor {
         player.sendMessage(white + "");
         player.sendMessage("You have been teleported to your world automatically. Return to spawn using" + green + " /spawn");
         player.sendMessage(white + "");
-        String worldName = player.getName() + "_world";
-        World world = Bukkit.getWorld(worldName);
-
-        player.teleport(world.getSpawnLocation());
+        player.teleport(smallWorld.getSpawnLocation());
 
 
     }
