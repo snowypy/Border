@@ -1,0 +1,14 @@
+on papi request for prefix "border":
+	if the identifier is "title_color":
+		set the result to "%{-server::color::title}%"
+	if the identifier is "server_name":
+		set the result to "&l%{-server::name::name} in uppercase%"
+	if the identifier is "discord_color":
+		set the result to "%{-server::color::discord}%"
+	if the identifier is "store_color":
+		set the result to "%{-server::color::store}%"
+	if the identifier is "domain_color":
+		set the result to "%{-server::color::domain}%"
+	if the identifier is "domain_name":
+		set the result to "%{-server::name::domain}%"
+	

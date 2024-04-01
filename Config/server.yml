@@ -1,0 +1,36 @@
+# Hello! Thank you for purchasing this setup.
+# To configure all of your server branding in one place,
+# you can use this configuration file.
+#
+# If you are found to have shared and of the data in this setup without permission,
+# You could have your license revoked from any Pikz Studio resources that you own.		
+#
+# Feel free to remove the hashed out messages once read however note that this does not invalidate the message.
+
+
+server:
+  name:
+    name: Example
+    domain: play.example.com
+    discord: discord.gg/example
+    store: store.example.com
+    forums: forums.example.com
+  game:
+    start:
+      money: 5000
+      tpdelay: 5 # Seconds
+      tpmessage_type: action-bar # action-bar, title or text
+      tpmessages_message: "%{server::color::main}%You are teleporting to %{server::color::highlight}%<loc> &7(<time>s left)"
+  color:
+    title: <#63FF51>
+    domain: <#9CFF91>
+    main: <#A1A1A1>
+    highlight: <#6FFF22>
+    discord: <#518BFF>
+    store: <#FF51FC>
+  broadcasts:
+    - "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%You are playing on %{server::color::highlight}%%{server::name::domain}% %{server::color::main}%with %{server::color::highlight}%<online-players> other players%nl%%{server::color::highlight}%&l|"
+    - "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%You can join our discord using %{server::color::highlight}%/discord%nl%%{server::color::highlight}%"
+    - "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%Do you want to support us? Visit our Webstore @ %{server::color::highlight}%/store%nl%%{server::color::highlight}%"
+    - "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%Want some COOL items? Try out AFKing using%{server::color::highlight}%/afk%nl%%{server::color::highlight}%"
+    - "%{server::color::highlight}%&l|%nl%%{server::color::highlight}%&l| %{server::color::title}%%{server::name::name}% %{server::color::main}%This was developed by %{server::color::highlight}%Pikz & SnowyJS %{server::color::main}%Thanks for supporting us!%nl%%{server::color::highlight}%"
