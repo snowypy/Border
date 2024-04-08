@@ -19,23 +19,6 @@ public class Trash implements Listener, CommandExecutor {
 
     private static Map<Player, Inventory> trashInventories;
 
-
-    /*@EventHandler
-    public void onInventoryClick(InventoryClickEvent event) {
-        if (event.getInventory().equals(trashInventories.get(event.getWhoClicked()))) {
-            event.setCancelled(true);
-
-            if (event.getCurrentItem() != null && event.getCurrentItem().getType() != Material.AIR) {
-                event.getWhoClicked().getInventory().remove(event.getCurrentItem());
-            }
-        }
-    }*/
-
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent event) {
-        trashInventories.remove(event.getPlayer());
-    }
-
     public static void openTrashGUI(Player player) {
         Inventory trashInventory = Bukkit.createInventory(player, 54, "Trash");
 
