@@ -2,7 +2,7 @@ name: Border
 version: '1.2'
 main: xyz.pikzstudio.Border
 api-version: '1.20'
-prefix: ServerCore
+prefix: Server
 authors: [SnowyJS]
 depend:
   - LuckPerms
