@@ -1,0 +1,61 @@
+# Hello! Thank you for purchasing this setup.
+# To configure all of your server branding in one place,
+# you can use this configuration file.
+#
+# If you are found to have shared and of the data in this setup without permission,
+# You could have your license revoked from any Pikz Studio resources that you own.
+#
+# Feel free to remove the hashed out messages once read however note that this does not invalidate the message.
+
+# How to Configure?
+#
+# All color options are recommended to be hex colors and should be in the format <#123456>.
+# If you want to use the color options in a broadcast or message in this config just insert <col_colortype> for example:
+# <col_domain> to insert the color configured for the domain. If you insert <domain> it would insert the domain configured
+# under the name section. To insert a new line into a message or broadcast you can use <nl>.
+# If you want to grab a player's name you can use <name>. Note: This does not work in broadcasts unless you disable the
+# optimise-broadcasts setting.
+
+license:
+  key: GET-YOUR-KEY-FROM-PIKZSTUDIO-DISCORD.GG/PIKZSTUDIOS
+
+server:
+
+  name:
+    permission-node: server
+    name: Example
+    domain: play.example.com
+    discord: discord.gg/example
+    store: store.example.com
+    forums: forums.example.com
+
+  game:
+
+    start:
+      money: 5000
+      tpdelay: 5 # Seconds
+
+    messages:
+      tpmessage_type: action-bar # action-bar, title or text
+      tpmessages_message: "<col_main>You are teleporting to <col_highlight><loc> &7(<time>s left)"
+      joinMessage: "&7[&a+&7] &a<name> &7has joined"
+      quitMessage: "&7[&c-&7] &c<name> &7has disconnected"
+
+  color:
+    title: <#63FF51>
+    domain: <#9CFF91>
+    main: <#A1A1A1>
+    highlight: <#6FFF22>
+    discord: <#518BFF>
+    store: <#FF51FC>
+
+  options:
+    optimise-broadcasts: true
+    starting-money: true
+
+  broadcasts:
+    - "<col_highlight>&l|%nl%<col_highlight>&l| <col_title><name_name> <col_main>You are playing on <col_highlight>%{server::name::domain}% <col_main>with <col_highlight><online-players> other players%nl%<col_highlight>%nl%<col_highlight>&l|"
+    - "<col_highlight>&l|%nl%<col_highlight>&l| <col_title><name_name> <col_main>You can join our discord using <col_highlight>/discord%nl%<col_highlight>%nl%<col_highlight>&l|"
+    - "<col_highlight>&l|%nl%<col_highlight>&l| <col_title><name_name> <col_main>Do you want to support us? Visit our Webstore @ <col_highlight>/store%nl%<col_highlight>%nl%<col_highlight>&l|"
+    - "<col_highlight>&l|%nl%<col_highlight>&l| <col_title><name_name> <col_main>Want some COOL items? Try out AFKing using<col_highlight>/afk%nl%<col_highlight>%nl%<col_highlight>&l|"
+    - "<col_highlight>&l|%nl%<col_highlight>&l| <col_title><name_name> <col_main>This was developed by <col_highlight>Pikz & SnowyJS <col_main>Thanks for supporting us!%nl%<col_highlight>%nl%<col_highlight>&l|"
