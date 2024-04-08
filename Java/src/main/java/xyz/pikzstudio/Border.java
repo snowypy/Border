@@ -10,6 +10,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.configuration.file.FileConfiguration;
+import xyz.pikzstudio.Worlds.WorldCommand;
+import xyz.pikzstudio.Worlds.WorldCreation;
 
 public class Border extends JavaPlugin {
 
@@ -23,12 +26,6 @@ public class Border extends JavaPlugin {
           Tags
           Chat Filter
           Database Support
-          Config ymls [To be loaded into the Config/* directory]
-
-            Config/Branding/brand.yml -> Sk
-            Config/World/config.yml -> Java
-            Config/Missions/config.yml -> Java
-            Config/Basic/config.yml -> Java
 
           World Manage [Manage Visting rights, Manage Visiting location, TP On join, Border Color]
           World Creation
@@ -41,10 +38,24 @@ public class Border extends JavaPlugin {
 
         log(ChatColor.GREEN + "You loaded Border v1.2. This is a custom plugin made by " + ChatColor.LIGHT_PURPLE + "SnowyJS" + ChatColor.GREEN + " for You!");
 
+
+        // Load Configs
+
+        saveDefaultConfig();
+        reloadConfig();
+
+        // License Data Register
+
+        License license = new License();
+
+        if (!License.isLicenseValid(getConfig().getString("license.key"))) {
+            log("DebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebug");
+        }
+
+
         // Mission Data Register
 
         MissionsData missionsData = new MissionsData();
-
         MissionListener missionListener = new MissionListener(missionsData);
         MissionsCommand missionCommand = new MissionsCommand(missionsData);
 
@@ -52,17 +63,19 @@ public class Border extends JavaPlugin {
 
         registerEvents(this, new Trash());
         registerEvents(this, missionListener);
-        registerEvents(this, new SessionListener());
+        registerEvents(this, new SessionListener(this));
 
         // Command Register
 
         getCommand("missions").setExecutor(missionCommand);
-
-        getCommand("world").setExecutor(new Worlds());
-
+        getCommand("world").setExecutor(new WorldCommand());
         getCommand("trash").setExecutor(new Trash());
 
+    }
 
+
+    public FileConfiguration getPluginConfig() {
+        return getConfig();
     }
 
     public void onDisable() {
