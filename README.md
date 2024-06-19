@@ -1,4 +1,4 @@
-<h1 align="center">Border Setup</h1><div align="center">
+<h1 align="center">Border Setup [ARC]</h1><div align="center">
 <i>Private Repo, Made with ❤️ by SnowyJS</i>
 
 <h2 align="center">What is this?</h2><div align="center">
