@@ -45,12 +45,7 @@ public class Border extends JavaPlugin {
         reloadConfig();
 
         // License Data Register
-
-        License license = new License();
-
-        if (!License.isLicenseValid(getConfig().getString("license.key"))) {
-            log("DebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebugDebug");
-        }
+        // REMOVED
 
 
         // Mission Data Register
